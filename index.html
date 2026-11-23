@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adrián Beltrán · Edge AI</title>
+<meta name="description" content="Adrián Emiliano Beltrán Fernández — Research Data Scientist building AI that runs on edge devices: TinyML, on-device vision and speech, biomedical applications.">
+<meta property="og:title" content="Adrián Beltrán · Edge AI">
+<meta property="og:description" content="Research Data Scientist building AI that runs on edge devices.">
+<meta property="og:image" content="assets/dermatoscope_saliency.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <nav class="wrap nav">
+    <a class="brand" href="#">AB</a>
+    <div class="links">
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<section class="wrap hero">
+  <p class="eyebrow">Research Data Scientist · Edge AI · Biomedical Physics</p>
+  <h1>Adrián Emiliano Beltrán Fernández</h1>
+  <p class="lead">I build AI that runs <strong>on the device</strong>, not in the cloud: from int8 neural networks on
+    microcontrollers to vision models and local language models on embedded Linux boards, applied to healthcare.</p>
+  <div class="cta">
+    <a class="btn primary" href="assets/Adrian_Beltran_CV.pdf">Download CV</a>
+    <a class="btn" href="https://github.com/AdrianbeltranFC">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/adri%C3%A1n-beltr%C3%A1n">LinkedIn</a>
+    <a class="btn" href="mailto:adrian_beltran@ciencias.unam.mx">Email</a>
+  </div>
+  <ul class="facts">
+    <li><b>2</b><span>Springer publications</span></li>
+    <li><b>8 ms</b><span>TinyML inference on a Cortex-M4</span></li>
+    <li><b>~50 ms</b><span>TFLite inference on Raspberry Pi 5</span></li>
+    <li><b>9.18</b><span>GPA, UNAM Biomedical Physics</span></li>
+  </ul>
+</section>
+
+<section id="projects" class="wrap">
+  <h2>Projects</h2>
+
+  <article class="feature">
+    <figure><img src="assets/dermatoscope_saliency.jpg" alt="Original dermoscopic image, model activation map and overlay highlighting the lesion" loading="lazy"></figure>
+    <div class="body">
+      <p class="tag">Computer vision · Edge AI · 2026</p>
+      <h3>Portable AI dermatoscope</h3>
+      <p>A 3D-printed, cross-polarized dermatoscope built on a <strong>Raspberry Pi 5</strong> and Camera Module 3 that
+        classifies skin lesions at the point of care. I led the device design and software.</p>
+      <ul>
+        <li>EfficientNetB0 with transfer learning (HAM10000), converted to <strong>TensorFlow Lite FP16</strong>: about 50 ms per image on the board.</li>
+        <li>Lesion segmentation designed to work on darker skin tones (adaptive YCbCr, blue channel + Otsu).</li>
+        <li>Saliency maps so clinicians can see what the model looked at (shown above, public dataset image).</li>
+        <li>Oral presentation at ICBHI–CLASD 2026, Springer IFMBE Proceedings.</li>
+      </ul>
+      <p class="chips"><span>Raspberry Pi 5</span><span>TFLite</span><span>TensorFlow</span><span>OpenCV</span><span>3D printing</span></p>
+      <a class="more" href="https://github.com/AdrianbeltranFC/dermatoscopio-portatil-IA">Code on GitHub →</a>
+    </div>
+  </article>
+
+  <article class="feature">
+    <figure><img src="assets/poster_tinyml_crop.jpg" alt="Workflow: Arduino on the abdomen records breathing, a 78-32-16-32-4 network trained in Edge Impulse and deployed in int8 classifies four conditions" loading="lazy"></figure>
+    <div class="body">
+      <p class="tag">TinyML · Signals · 2026</p>
+      <h3>Respiratory monitoring on a microcontroller</h3>
+      <p>An <strong>Arduino Nano 33 BLE Sense</strong> strapped to the abdomen classifies four breathing conditions
+        (resting, lying down, recovery after walking or running) using only its built-in motion sensor.</p>
+      <ul class="metrics">
+        <li><b>84.7%</b><span>test accuracy</span></li>
+        <li><b>1.6 kB</b><span>RAM</span></li>
+        <li><b>18.1 kB</b><span>flash</span></li>
+        <li><b>~8 ms</b><span>per inference</span></li>
+      </ul>
+      <p>78 spectral features, a small dense network trained in <strong>Edge Impulse</strong> and quantized to <strong>int8</strong>.
+        Poster at ICBHI–CLASD 2026, Springer IFMBE Proceedings.</p>
+      <p class="chips"><span>Cortex-M4</span><span>Edge Impulse</span><span>int8</span><span>IMU</span></p>
+      <a class="more" href="assets/poster_tinyml_respiratory.jpg">See the full poster →</a>
+    </div>
+  </article>
+
+  <div class="grid">
+    <article class="card">
+      <p class="tag">Medical AI · Thesis</p>
+      <h3>Wound tissue analysis with weak and dense labels</h3>
+      <p>Undergraduate thesis (UNAM, PAPIIT IN115825): classifying and segmenting tissues in diabetic foot ulcer
+        photos with multiple-instance learning, DINOv2 features and continual learning. Per-tissue AUC up to 0.89 with a
+        lightweight MobileNetV2 backbone chosen for on-device use.</p>
+      <p class="chips"><span>PyTorch</span><span>MobileNetV2</span><span>DINOv2</span></p>
+      <a class="more" href="https://github.com/AdrianbeltranFC/Co_MIL_PPS">Code on GitHub →</a>
+    </article>
+
+    <article class="card">
+      <p class="tag">Web · Self-hosted</p>
+      <h3>Kanan: clinical annotation platform</h3>
+      <p>A web app where clinical nurses outline wounds and label tissues pixel by pixel to build the thesis dataset.
+        Self-hosted on a <strong>Raspberry Pi 5</strong>, reachable securely over HTTPS through Tailscale.</p>
+      <p class="chips"><span>Raspberry Pi 5</span><span>Linux</span><span>Tailscale</span></p>
+    </article>
+
+    <article class="card">
+      <p class="tag">Signals · Machine learning</p>
+      <h3>Human activity recognition with a wearable IMU</h3>
+      <p>Bluetooth Low Energy acquisition from a WT9011DCL sensor, feature extraction and selection, and SVM vs. k-NN
+        to tell apart standing still, walking and running.</p>
+      <p class="chips"><span>Python</span><span>scikit-learn</span><span>BLE</span></p>
+      <a class="more" href="https://github.com/AdrianbeltranFC/Reconocimiento-de-Actividad-Humana-con-Sensores-Inerciales-mediante-Machine-Learning">Code on GitHub →</a>
+    </article>
+  </div>
+
+  <article class="confidential">
+    <div>
+      <p class="tag">Grupo Carso · Centro de Inteligencia Digital</p>
+      <h3>Industry work: edge AI and data science</h3>
+      <p>At Grupo Carso I work on an on-device AI project for healthcare running on Qualcomm hardware, and on
+        large-scale energy analytics for the telecom sector. These projects belong to Grupo Carso and its clients, so
+        their code and details are not public.</p>
+    </div>
+    <div class="notice">
+      <p><b>Demo available on request.</b> If you would like to see a demonstration, please email me. I will check
+        with the Centro de Inteligencia Digital what can be shared and get back to you.</p>
+      <a class="btn primary" href="mailto:adrian_beltran@ciencias.unam.mx?subject=Demo%20request">Request a demo</a>
+    </div>
+  </article>
+</section>
+
+<section id="publications" class="wrap">
+  <h2>Publications and talks</h2>
+  <ol class="pubs">
+    <li>
+      <p class="pt">AI-Based Mobile App for Segmentation and Tissue Classification on Diabetic Foot Ulcer: A Step Forward in Patient Care</p>
+      <p class="pm">Maldonado-Oclica A., …, Beltrán-Fernández A., et al. · <em>AIME 2025, Springer LNCS 15735</em> · Pavia, Italy · Co-author and presenter</p>
+      <a href="https://doi.org/10.1007/978-3-031-95841-0_47">doi:10.1007/978-3-031-95841-0_47</a>
+    </li>
+    <li>
+      <p class="pt">Raspberry Pi-based portable dermatoscope with computer vision for skin lesion detection</p>
+      <p class="pm">Second author · <em>ICBHI–CLASD 2026, Springer IFMBE Proceedings</em> · Oaxaca, Mexico · Oral presentation</p>
+    </li>
+    <li>
+      <p class="pt">Abdominal Respiratory Motion Analysis During Rest and Post Exercise Recovery Using Arduino Nano 33 BLE Sense and Edge Impulse</p>
+      <p class="pm">Chairez-Veloz J. E., López-Castro K. J., Saldívar-Moreno A. V., Albarrán-Calderón H. S., Beltrán-Fernández A. · <em>ICBHI–CLASD 2026, Springer IFMBE Proceedings</em> · Poster</p>
+    </li>
+  </ol>
+</section>
+
+<section id="experience" class="wrap">
+  <h2>Experience</h2>
+  <ul class="timeline">
+    <li><span class="when">Jul 2026 – Present</span><div><b>Research Data Scientist</b> · Grupo Carso, Centro de Inteligencia Digital<p>Edge AI on Qualcomm hardware and large-scale data analysis for health and telecom clients.</p></div></li>
+    <li><span class="when">Oct 2026 – Present</span><div><b>Research Assistant</b> to a Level 3 National Researcher · SECIHTI (SNII)</div></li>
+    <li><span class="when">Jun 2024 – Present</span><div><b>Undergraduate Researcher</b> · UNAM, Faculty of Sciences<p>Medical computer vision thesis and the Kanan annotation platform.</p></div></li>
+    <li><span class="when">Feb – Jul 2026</span><div><b>Teaching Assistant, Tiny Machine Learning</b> · UNAM<p>TensorFlow Lite and TFLite Micro on Arduino and ESP32, Edge Impulse, and small quantized LLMs on Raspberry Pi 5. Mentored student teams; the FusionGait project reached a poster at ICBHI–CLASD 2026.</p></div></li>
+    <li><span class="when">Jun 2024 – Jun 2026</span><div><b>Biomedical Developer and Project Leader</b> · SEKKAN</div></li>
+  </ul>
+</section>
+
+<section class="wrap">
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Edge and embedded</dt><dd>Qualcomm QCS6490 (Rubik Pi 3), Raspberry Pi 5, Arduino Nano 33 BLE Sense, ESP32, Linux, Docker</dd>
+    <dt>On-device ML</dt><dd>TensorFlow Lite / TFLite Micro, int8 and FP16 quantization, Edge Impulse, llama.cpp, Vosk, Whisper</dd>
+    <dt>ML and data</dt><dd>Python, PyTorch, TensorFlow, scikit-learn, XGBoost, OpenCV, pandas, SQL, MATLAB</dd>
+    <dt>Software</dt><dd>FastAPI, WebSockets, pytest, Git and GitHub, Streamlit, C++ (Arduino), C# (Unity)</dd>
+    <dt>Languages</dt><dd>Spanish (native), English (professional)</dd>
+  </dl>
+</section>
+
+<section id="contact" class="wrap contact">
+  <h2>Contact</h2>
+  <p>Open to edge AI and on-device machine learning roles. The fastest way to reach me is email.</p>
+  <div class="cta">
+    <a class="btn primary" href="mailto:adrian_beltran@ciencias.unam.mx">adrian_beltran@ciencias.unam.mx</a>
+    <a class="btn" href="assets/Adrian_Beltran_CV.pdf">Download CV</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap foot">
+  <p>© 2026 Adrián Emiliano Beltrán Fernández · Mexico City</p>
+</footer>
+
+</body>
+</html>
